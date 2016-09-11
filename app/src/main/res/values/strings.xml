@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">TrainningGO</string>
+    <string name="sharedpreferences_key">TrainningGOKey</string>
+    <string name="facebook_app_id">1646643982279130</string>
+
+    <string name="mainActivity_nav_item_home">Home</string>
+    <string name="mainActivity_nav_item_mygroups">Meus Grupos</string>
+    <string name="mainActivity_nav_item_achievement">Conquistas</string>
+    <string name="mainActivity_nav_item_settings">Configurações</string>
+    <string name="mainActivity_nav_item_help">Ajuda</string>
+    <string name="mainActivity_nav_item_logout">Sair</string>
+    <string name="mainActivity_menu_item_newgroup">Novo Grupo</string>
+
+    <string name="fragment_map_title">Ao redor</string>
+    <string name="fragment_feeds_title">Feeds</string>
+    <string name="fragment_groups_title">Grupos</string>
+    <string name="fragment_members_title">Membros</string>
+
+    <string name="item_card_grupo_nome">Nome grupo</string>
+    <string name="item_card_grupo_esporte">Nome esporte</string>
+
+    <string name="currentUser_isOn">ison</string>
+    <string name="currentUser_name">name</string>
+    <string name="currentUser_token">token</string>
+    <string name="currentUser_apikey">apikey</string>
+    <string name="currentUser_email">email</string>
+    <string name="currentUser_id">id</string>
+    <string name="currentUser_provider">provider</string>
+    <string name="currentUser_uid">uid</string>
+
+    <string name="fragment_new_group_field_hint_name">Name</string>
+    <string name="fragment_new_group_field_hint_desc">Descrição</string>
+    <string name="fragment_new_group_field_label_marcaratv">Marcar atividade</string>
+    <string name="fragment_new_group_field_prompt_spinner_sports">Esporte</string>
+    <string-array name="fragment_new_group_spinner_esportes">
+        <item>Esporte</item>
+        <item>Ciclismo</item>
+        <item>Corrida</item>
+        <item>Futebol</item>
+        <item>Volei</item>
+        <item>Musculação</item>
+    </string-array>
+
+    <string name="fragment_atividade_register_field_hint_location">Location</string>
+    <string name="fragment_atividade_register_field_hint_date">Date</string>
+
+    <string name="fragment_new_group_button_label_new_group">Novo grupo</string>
+
+    <string name="grupo_activity_content_description_imagem_grupo">image grupo</string>
+    <string name="grupo_activity_menu_configuracoes">Configurações</string>
+
+    <string name="item_atividade_notificatioon_content_description_calendar">calendario</string>
+    <string name="item_atividade_notification_sem_atividade">Nenhuma atividade marcada</string>
+    <string name="item_atividade_notification_sem_atividade_2">Combine com os participantes um dia para praticar.</string>
+    <string name="map_view_fragment_label_ultima_att">"Ultima atualização: "</string>
+
+
+</resources>
