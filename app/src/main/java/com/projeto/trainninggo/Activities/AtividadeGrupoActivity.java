@@ -1,12 +1,17 @@
 package com.projeto.trainninggo.Activities;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.projeto.domain.Model.ChargingLocation;
 import com.projeto.trainninggo.Base.BaseActivity;
 import com.projeto.trainninggo.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 

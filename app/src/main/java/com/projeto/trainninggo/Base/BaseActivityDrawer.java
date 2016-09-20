@@ -14,9 +14,6 @@ import com.projeto.trainninggo.R;
 
 import butterknife.BindView;
 
-/**
- * Created by Juarez on 27/08/2016.
- */
 public abstract class BaseActivityDrawer extends BaseActivity {
 
     @BindView(R.id.DrawerLayout)
@@ -47,7 +44,7 @@ public abstract class BaseActivityDrawer extends BaseActivity {
     public void showFragment(Fragment fragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        ft.replace(R.id.frame_container, fragment);
+        ft.replace(R.id.frame_container, fragment,"fragment");
         ft.addToBackStack("mainFrag");
         ft.commitAllowingStateLoss();
     }
@@ -63,4 +60,5 @@ public abstract class BaseActivityDrawer extends BaseActivity {
     public void setProfileImage(int id) {
         this.ivProfileImage.setImageResource(id);
     }
+
 }

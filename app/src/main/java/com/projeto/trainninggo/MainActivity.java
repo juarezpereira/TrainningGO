@@ -1,9 +1,11 @@
 package com.projeto.trainninggo;
 
 import android.content.Intent;
+import android.location.Location;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,13 +15,16 @@ import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
+import com.projeto.domain.Model.ChargingLocation;
 import com.projeto.trainninggo.Activities.LoginActivity;
 import com.projeto.trainninggo.Base.BaseActivityDrawer;
 import com.projeto.trainninggo.Fragment.DashBoardFragment;
 import com.projeto.trainninggo.Fragment.MyGroupsFragment;
 import com.projeto.trainninggo.Fragment.NewGroupFragment;
 
-public class MainActivity extends BaseActivityDrawer {
+import org.greenrobot.eventbus.EventBus;
+
+public class MainActivity extends BaseActivityDrawer{
 
     private TrainningGoApplication application;
     private LoginManager loginManager;
@@ -27,21 +32,19 @@ public class MainActivity extends BaseActivityDrawer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+        FacebookSdk.sdkInitialize(this);
         setContentView(R.layout.activity_main);
         setTitle(getString(R.string.app_name));
 
         this.application = ((TrainningGoApplication)getApplication());
         this.loginManager = LoginManager.getInstance();
 
-        //USUÁRIO LOGADO NA APLICAÇÃO
-        //PEDIR PARA VERIFICAR A PERMISSÃO DE LOCALIZAÇÃO
-        if(application.getCurrentUser()!= null){
+        if(application.getCurrentUser() == null) {
+            startActivity(new Intent(getBaseContext(), LoginActivity.class));
+        }else {
             this.showFragment(new DashBoardFragment());
             this.setProfileName(application.getCurrentUser().getName());
             this.setProfileEmail(application.getCurrentUser().getEmail());
-        }else{
-            startActivity(new Intent(getBaseContext(), LoginActivity.class));
         }
 
     }
@@ -56,8 +59,7 @@ public class MainActivity extends BaseActivityDrawer {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_newgroup:
-                showFragment(new NewGroupFragment());
-                Toast.makeText(getBaseContext(),item.getTitle(),Toast.LENGTH_SHORT).show();
+                this.showFragment(new NewGroupFragment());
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -73,7 +75,6 @@ public class MainActivity extends BaseActivityDrawer {
                 switch (item.getItemId()){
                     case R.id.nav_item_home:
                         showFragment(new DashBoardFragment());
-                        Toast.makeText(getApplicationContext(),item.getTitle(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.nav_item_mygroups:
                         showFragment(new MyGroupsFragment());
@@ -117,7 +118,7 @@ public class MainActivity extends BaseActivityDrawer {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CLOSE_APP)
+        if(requestCode == CLOSE_APP)
             finish();
     }
 

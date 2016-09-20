@@ -1,5 +1,6 @@
 package com.projeto.trainninggo.Fragment;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -11,12 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.projeto.trainninggo.Base.BaseFragment;
 import com.projeto.trainninggo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DashBoardFragment extends Fragment {
+public class DashBoardFragment extends BaseFragment {
 
     @BindView(R.id.TabLayout) TabLayout mTabLayout;
     @BindView(R.id.ViewPager) ViewPager mViewPager;

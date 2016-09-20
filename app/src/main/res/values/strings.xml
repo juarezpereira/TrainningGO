@@ -3,6 +3,12 @@
     <string name="sharedpreferences_key">TrainningGOKey</string>
     <string name="facebook_app_id">1646643982279130</string>
 
+    <string name="baseActivity_permission_location">Permissão de Localização</string>
+    <string name="baseActivity_permission_text">TrainningGO necessita da sua localização para identificar grupos de atividades ao seu redor.</string>
+    <string name="baseActivity_permission_text1">Essa permissão e essencial para o funcionamento da aplicaçao.</string>
+    <string name="baseActivity_action_label_ativar">OK</string>
+    <string name="baseActivity_action_label_cancelar">Cancelar</string>
+
     <string name="mainActivity_nav_item_home">Home</string>
     <string name="mainActivity_nav_item_mygroups">Meus Grupos</string>
     <string name="mainActivity_nav_item_achievement">Conquistas</string>
@@ -52,7 +58,7 @@
     <string name="item_atividade_notificatioon_content_description_calendar">calendario</string>
     <string name="item_atividade_notification_sem_atividade">Nenhuma atividade marcada</string>
     <string name="item_atividade_notification_sem_atividade_2">Combine com os participantes um dia para praticar.</string>
-    <string name="map_view_fragment_label_ultima_att">"Ultima atualização: "</string>
 
+    <string name="map_view_fragment_label_ultima_att">"Ultima atualização: "</string>
 
 </resources>

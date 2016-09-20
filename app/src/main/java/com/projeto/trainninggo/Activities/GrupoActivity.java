@@ -3,6 +3,7 @@ package com.projeto.trainninggo.Activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.graphics.Palette;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +24,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.projeto.domain.Model.Atividade;
+import com.projeto.domain.Model.ChargingLocation;
 import com.projeto.domain.Model.Grupo;
 import com.projeto.trainninggo.Base.BaseActivity;
 import com.projeto.trainninggo.Fragment.FeedFragment;
 import com.projeto.trainninggo.Fragment.MembersFragment;
 import com.projeto.trainninggo.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 
